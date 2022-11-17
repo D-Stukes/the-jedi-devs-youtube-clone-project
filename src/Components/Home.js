@@ -13,7 +13,7 @@ function Home() {
     fetch(`${BASE_URL}`)
       .then((response) => response.json())
       .then((data) => {
-        // console.log("Fetched data", data, "data.items")
+        console.log("Fetched data", data, "data.items")
         console.log(
           "data.items[0].snippet.thumbnails #1",
           data.items[0].snippet.thumbnails.default.url
