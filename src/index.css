@@ -67,3 +67,8 @@ background-color: black;
   height: 11vh;
   width: 70.5vw;
 }
+
+.videoThumbnail{
+  height: 150px;
+  width: 150px;
+}
