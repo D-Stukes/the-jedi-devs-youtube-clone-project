@@ -3,6 +3,7 @@ import Nav from "./Nav"
 import { useState } from "react"
 import { Navigate } from "react-router-dom"
 import OneVideo from "./OneVideo"
+import { Link } from "react-router-dom"
 
 function Home() {
   const [searchInput, setSearchInput] = useState("")
@@ -83,7 +84,8 @@ function Home() {
                 return(
                 
                     <li key={video.id.videoId || video.id.channelId}>
-                        <img src = {video.snippet.thumbnails.high.url} alt = "video thumbnail pics"/>
+                        <h2>{video.snippet.title}</h2>
+                       {/* <Link to= "https://www.youtube.com/watch?v=${video.id.videoId}"> <img src = {video.snippet.thumbnails.high.url} alt = "video thumbnail pics"/> </Link> */}
                         < OneVideo videoId={video.id.videoId}/>
                     </li>
                 )
