@@ -83,7 +83,7 @@ function Home() {
                 return(
                 
                     <li key={video.id.videoId || video.id.channelId}>
-                        <img src = {video.snippet.thumbnails.high.url} />
+                        <img src = {video.snippet.thumbnails.high.url} alt = "video thumbnail pics"/>
                         < OneVideo videoId={video.id.videoId}/>
                     </li>
                 )
