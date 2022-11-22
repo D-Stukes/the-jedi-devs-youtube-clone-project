@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import OneVideo from "./OneVideo"
+
 
 function VideoList({ videos }) {
   return (
@@ -15,10 +17,6 @@ function VideoList({ videos }) {
                 />
                 <h3>{video.snippet.title}</h3>
               </Link>
-              {/* < OneVideo  
-                            videoUrl ={video.snippet.thumbnails.high.url} 
-                            video ={video}
-                            videoId={video.id.videoId}/> */}
             </>
           </div>
         )
@@ -28,3 +26,15 @@ function VideoList({ videos }) {
 }
 
 export default VideoList
+
+
+{/* <ReactPlayer
+url={`https://www.youtube.com/watch?v=${id}`}
+className="react-player"
+controls
+/> */}
+
+{/* <OneVideo  
+videoUrl ={video.snippet.thumbnails.high.url} 
+video ={video}
+videoId={video.id.videoId}/>  */}

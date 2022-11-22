@@ -22,18 +22,7 @@ function Home() {
         setDatalist(data.items)
         console.log("Fetched datalist", datalist)
         // window.localStorage.setItem("dataItems", JSON.stringify(data.items))
-        // console.log("datalist.items[0].snippet.thumbnails", datalist.items[0].snippet.thumbnails.default.url
-        // )
-        // console.log("data.items[0].id", datalist.items[1].id)
-        // console.log("data.items[0].id.videoId", datalist.items[1].id.videoId)
-
-        //assign variable to videoID
-
-        //const thumbNail = snippet.thumbnails.default.url
-
-        // for(let video of videoData){
-        //     let videoImage = <img className="videoThumbnail" src="snippet.thumbnails.default.url" />
-        // }
+      
       })
       .catch((err) => {
         console.log(err)
