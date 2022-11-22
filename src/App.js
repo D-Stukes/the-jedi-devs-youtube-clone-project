@@ -3,6 +3,7 @@ import Home from "./Components/Home"
 import About from "./Components/About"
 import OneVideo from "./Components/OneVideo"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import VideoList from "./Components/VideoList"
 
 function App() {
   return (
@@ -12,6 +13,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/selectedVideo" element={<OneVideo />} />
+          <Route
+            pat="/oneVideo/:videoId"
+            element={<OneVideo type={"VideoList"} />}
+          />
         </Routes>
       </Router>
     </div>

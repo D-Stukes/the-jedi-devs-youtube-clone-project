@@ -3,6 +3,7 @@ import Nav from "./Nav"
 import { useState } from "react"
 import { Navigate } from "react-router-dom"
 import OneVideo from "./OneVideo"
+import VideoList from "./VideoList"
 import { Link } from "react-router-dom"
 
 function Home() {
@@ -27,25 +28,21 @@ function Home() {
         // console.log("data.items[0].id.videoId", datalist.items[1].id.videoId)
 
         //assign variable to videoID
-       
+
         //const thumbNail = snippet.thumbnails.default.url
 
-            // for(let video of videoData){
-            //     let videoImage = <img className="videoThumbnail" src="snippet.thumbnails.default.url" />
-            // }
-  
+        // for(let video of videoData){
+        //     let videoImage = <img className="videoThumbnail" src="snippet.thumbnails.default.url" />
+        // }
       })
       .catch((err) => {
         console.log(err)
       })
   }
 
-
-
   function handleChangeSearch(e) {
     setSearchInput(e.target.value)
   }
-
 
   return (
     <div home-grid>
@@ -57,6 +54,7 @@ function Home() {
             className="searchBox"
             type="text"
             name="search"
+            value={searchInput}
             placeholder="Type a keyword here to find your video"
           />
 
@@ -71,42 +69,20 @@ function Home() {
           display videos
         </p>
       </div>
-        <p className="tempVideoText">Area of Search Results - Videos</p>
+      <p className="tempVideoText">Area of Search Results - Videos</p>
 
-        <div className="videoBox"> 
-        <ul>
-        {
-
-        datalist.length > 0 ?
-
-        
-            datalist.map((video) => {
-                return(
-                
-                    <li key={video.id.videoId || video.id.channelId}>
-                        <h2>{video.snippet.title}</h2>
-                       {/* <Link to= "https://www.youtube.com/watch?v=${video.id.videoId}"> <img src = {video.snippet.thumbnails.high.url} alt = "video thumbnail pics"/> </Link> */}
-                        < OneVideo videoId={video.id.videoId}/>
-                    </li>
-                )
-            })
-        :
-            null
-
-        }
-        </ul>
-        </div>
-     </div>
+      <div className="videoBox">
+        {datalist.length > 0 ? <VideoList videos={datalist} /> : null}
+      </div>
+    </div>
   )
 }
 
 export default Home
 
-
-
-    // function handleClickVideo{
-    //     // Navigate to oneVideo
-    //     let thumbNail = data.items[1].snippet.thumbnails.default
-    //      let videoPath = `https://www.youtube.com/watch?v=${video.id.videoId}`
-    //      <img src =`>
-    //     }
+// function handleClickVideo{
+//     // Navigate to oneVideo
+//     let thumbNail = data.items[1].snippet.thumbnails.default
+//      let videoPath = `https://www.youtube.com/watch?v=${video.id.videoId}`
+//      <img src =`>
+//     }
