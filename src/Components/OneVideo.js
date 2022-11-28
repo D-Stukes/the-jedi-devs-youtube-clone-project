@@ -1,21 +1,21 @@
 import React from "react"
 import { useParams } from "react-router-dom"
-//import ReactPlayer from "react-player/youtube"
-import YouTube from 'react-youtube'
+import ReactPlayer from "react-player/youtube"
+import { useState, useEffect } from "react"
 
-//import { useState, useEffect } from "react"
-
-function OneVideo() {
+function OneVideo({ video }) {
   const { id } = useParams()
-
-  // if (!video) return "Loading...!"
+  if (!video) return "Loading...!"
   return (
     <div>
-      <h1>A video should be here!</h1>
-      <YouTube videoId={id}/>
+      <ReactPlayer
+        url={`https://www.youtube.com/watch?v=${id}`}
+        className="react-player"
+        controls
+      />
+      <p>{video.snippet.thumbnails.title}</p>
     </div>
   )
 }
 
 export default OneVideo
-

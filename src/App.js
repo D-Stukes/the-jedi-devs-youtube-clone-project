@@ -13,7 +13,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/selectedVideo" element={<OneVideo />} />
-          <Route path="/oneVideo/:id"
+          <Route
+            pat="/oneVideo/:videoId"
             element={<OneVideo type={"VideoList"} />}
           />
         </Routes>
