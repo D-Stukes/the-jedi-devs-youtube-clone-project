@@ -7,3 +7,7 @@ export function getAllVideos() {
 export function getOneVideo(id) {
   return fetch(`BASE_URL/oneVideo/${id}`).then((res) => res.json())
 }
+
+export function getRelatedVideos() {
+  return fetch(`BASE_URL`)
+}

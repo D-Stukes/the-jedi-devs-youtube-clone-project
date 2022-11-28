@@ -14,7 +14,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/selectedVideo" element={<OneVideo />} />
           <Route
-            pat="/oneVideo/:videoId"
+            path="/oneVideo/:id"
             element={<OneVideo type={"VideoList"} />}
           />
         </Routes>
