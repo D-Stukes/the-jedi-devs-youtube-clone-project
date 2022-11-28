@@ -9,8 +9,10 @@ function OneVideo() {
   const [videoData, setVideoData] = useState("")
   const [videoTitle, setVideoTitle] = useState("")
   const [videoDescription, setVideoDescription] = useState("")
-  const [videoLikes, setVideoLikes] = useState("")
-
+  const [videoLikes, setVideoLikes] = useState(0)
+  const [videoNotLikes, setVideoNotLikes] = useState(0)
+  const [liked, setLiked] = useState(false)
+  const [notLiked, setNotLiked] = useState(false)
 
   // const BASE_URL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${searchInput}&key=${process.env.REACT_APP_API_KEY}`
 
@@ -40,6 +42,31 @@ useEffect(() => {
     }, [id])
 
 
+function handleClickAddLikes(){
+ 
+ liked = false ? setVideoLikes(Number(videoLikes)+1)
+ : setVideoLikes(Number(videoLikes)-1)
+//  liked = true ? setVideoLikes(Number(videoLikes)-1) 
+//  : null
+//  setLiked(false)
+}
+// function handleToggle(){
+//   !liked
+// }
+
+
+function handleClickAddNotLikes(){
+  notLiked = false ? setVideoNotLikes(Number(videoNotLikes)+1)
+  : setVideoNotLikes(Number(videoNotLikes)-1)
+ //  liked = true ? setVideoLikes(Number(videoLikes)-1) 
+ //  : null
+ //  setLiked(false)
+ }
+
+
+ // function handleToggle(){
+ //   !notLiked
+ // }
   // if (!video) return "Loading...!"
   return (
     <div>
@@ -47,7 +74,18 @@ useEffect(() => {
       <YouTube videoId={id}/>
 
       <div className="videoInfo">
-       <h3>{videoTitle} Likes:{videoLikes}</h3> 
+       <h3 className="videoTitle">{videoTitle}</h3>  
+     {/* <button onClick={handleClickAddLikes}> {videoLikes}</button> */}
+               <input 
+               className="likeButton"
+               onClick={handleClickAddLikes}
+               type="image" src={require("./LikeButton/likeImage.png")} />
+               {videoLikes}
+
+               <input className="noLikeButton"
+               onClick={handleClickAddNotLikes}
+               type="image" src={require("./NoLikeButton/NoLikeImage.png")} />
+               {videoNotLikes}
        <p>{videoDescription}</p>
       </div>
     </div>
@@ -55,3 +93,4 @@ useEffect(() => {
 }
 
 export default OneVideo
+
