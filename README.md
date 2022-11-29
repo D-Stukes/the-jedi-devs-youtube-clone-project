@@ -10,5 +10,8 @@ Diane Stukes
 ### Link to Trello
 [Trello for The Jedi Devs Youtube Project](https://trello.com/b/MlwnbT8C/the-jedi-devs)
 
+### Link to Deployed Site:
+https://app.netlify.com/sites/legendary-malabi-010def/overview
+
 
 
