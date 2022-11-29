@@ -9,8 +9,8 @@ function OneVideo() {
   const [videoData, setVideoData] = useState("")
   const [videoTitle, setVideoTitle] = useState("")
   const [videoDescription, setVideoDescription] = useState("")
-  const [videoLikes, setVideoLikes] = useState(0)
-  const [videoNotLikes, setVideoNotLikes] = useState(0)
+  const [videoTotalLikes, setVideoTotalLikes] = useState(0)
+  const [videoTotalNotLikes, setVideoTotalNotLikes] = useState(0)
   const [liked, setLiked] = useState(false)
   const [notLiked, setNotLiked] = useState(false)
 
@@ -31,7 +31,7 @@ useEffect(() => {
       setVideoData(data)
       setVideoTitle(data.items[0].snippet.title)
       setVideoDescription(data.items[0].snippet.description)
-      setVideoLikes(data.items[0].statistics.likeCount)
+      setVideoTotalLikes(data.items[0].statistics.likeCount)
       // console.log("Fetched datalist", datalist)
       // window.localStorage.setItem("dataItems", JSON.stringify(data.items))
     
@@ -44,8 +44,8 @@ useEffect(() => {
 
 function handleClickAddLikes(){
  
- liked = false ? setVideoLikes(Number(videoLikes)+1)
- : setVideoLikes(Number(videoLikes)-1)
+ liked = false ? setVideoTotalLikes(Number(videoTotalLikes)+1)
+ : setVideoTotalLikes(Number(videoTotalLikes)-1)
 //  liked = true ? setVideoLikes(Number(videoLikes)-1) 
 //  : null
 //  setLiked(false)
@@ -56,8 +56,8 @@ function handleClickAddLikes(){
 
 
 function handleClickAddNotLikes(){
-  notLiked = false ? setVideoNotLikes(Number(videoNotLikes)+1)
-  : setVideoNotLikes(Number(videoNotLikes)-1)
+  notLiked = false ? setVideoTotalNotLikes(Number(videoTotalNotLikes)+1)
+  : setVideoTotalNotLikes(Number(videoTotalNotLikes) - 1)
  //  liked = true ? setVideoLikes(Number(videoLikes)-1) 
  //  : null
  //  setLiked(false)
@@ -80,12 +80,12 @@ function handleClickAddNotLikes(){
                className="likeButton"
                onClick={handleClickAddLikes}
                type="image" src={require("./LikeButton/likeImage.png")} />
-               {videoLikes}
+               {videoTotalLikes}
 
                <input className="noLikeButton"
                onClick={handleClickAddNotLikes}
                type="image" src={require("./NoLikeButton/NoLikeImage.png")} />
-               {videoNotLikes}
+               {videoTotalNotLikes}
        <p>{videoDescription}</p>
       </div>
     </div>

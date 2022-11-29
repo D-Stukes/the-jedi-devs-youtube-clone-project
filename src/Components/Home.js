@@ -5,16 +5,23 @@ import { Navigate } from "react-router-dom"
 import OneVideo from "./OneVideo"
 import VideoList from "./VideoList"
 import { Link } from "react-router-dom"
+import Modal from "./Modal"
 
 function Home() {
   const [searchInput, setSearchInput] = useState("")
   const [datalist, setDatalist] = useState([])
+  
 
   function handleClickSearch(e) {
     e.preventDefault()
-
+    
     const BASE_URL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${searchInput}&key=${process.env.REACT_APP_API_KEY}`
 
+    if(searchInput === "") {
+      alert("Please enter a keyword to search")
+
+    } else {
+    
     fetch(`${BASE_URL}`)
       .then((response) => response.json())
       .then((data) => {
@@ -24,9 +31,11 @@ function Home() {
         // window.localStorage.setItem("dataItems", JSON.stringify(data.items))
       })
       .catch((err) => {
+        // alert("not found")
         console.log(err)
       })
   }
+}
 
   function handleChangeSearch(e) {
     setSearchInput(e.target.value)
