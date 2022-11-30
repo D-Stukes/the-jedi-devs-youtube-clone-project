@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 //import ReactPlayer from "react-player/youtube"
 import YouTube from 'react-youtube'
 import { useState, useEffect } from "react"
+import CommentsForm from "./CommentsForm"
 
 function OneVideo() {
   const { id } = useParams()
@@ -87,10 +88,14 @@ function handleClickAddNotLikes(){
                type="image" src={require("./NoLikeButton/NoLikeImage.png")} />
                {videoTotalNotLikes}
        <p>{videoDescription}</p>
+
+     
       </div>
+
     </div>
   )
 }
 
 export default OneVideo
 
+  {/* <CommentsForm videoId={id} /> */}

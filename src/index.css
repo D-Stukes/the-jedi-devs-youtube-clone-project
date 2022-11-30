@@ -97,7 +97,6 @@ background-color: black;
 
 
 .modalFront{
-
   height: 60vh;
   width: 60vw;
   background-color: white;
@@ -137,3 +136,75 @@ background-color: black;
 position: relative;
 z-index: 1;
 }
+
+.about-grid{
+  display: grid;
+  height:150vh;
+  width:100vw;
+  background-color: bisque;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: .1fr fr;
+}
+
+.DSgridBox{
+  margin-top: 0;
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.aboutDiane-pic{
+  background-image: url("../assets/DS-ProfilePic-BeautifulDay.png");
+  width: 58vh;
+  height: 44.35vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 100;
+  border: 2px solid brown
+}
+.DS-name{
+color: brown;
+font-weight: bold;
+margin-top: 5px;
+margin-bottom: 5px;
+background-color: rgba(255,228,196,.4);
+z-index: 1;
+width: 35vh;
+text-align: left;
+}
+.DS-description{
+  width: 70vh;
+  height: 70vh;
+  font-weight: bold;
+}
+
+.LNgridBox{
+  grid-row: 2;
+  grid-column: 2;
+  margin-top: 0;
+;
+}
+.aboutLennie-pic{
+  background-image: url("../assets/LN-profilepic3.png");
+  width: 65vh;
+  height: 44.3vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 100;
+  margin-bottom: 0;
+  border: 2px solid black
+}
+.LN-name{
+  color: black;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: rgba(255,228,196,.4);
+  z-index: 1;
+  width: 35vh;
+  text-align: left;
+  }
+  .LN-description{
+    width: 70vh;
+    height: 70vh;
+    font-weight: bold;
+  }

@@ -1,27 +1,70 @@
-import React from "react"
-import { useState } from "react"
-import { Form } from "react-router-dom"
+// import React from "react"
+// import { useState } from "react"
+// import { Form } from "react-router-dom"
 
-function CommentsForm() {
-  const [comment, setComment] = useState("")
-  const [newcomment, setNewComment] = useState({
-    commenter: "",
-    comment: "",
-  })
+// function CommentsForm({ videoId }) {
+//   const [comments, setComments] = useState("")
+//   const [commenter, setCommenter] = useState("")
+//   const [newComment, setNewComment] = useState([])
 
-  function addNewComment() {
-    setComment()
-  }
+//   function addNewComment() {
+//     const commentObj = { ...comments, Commenter: commenter, Comment: comments }
+//     newComment.push(commentObj)
+//   }
 
-  function resetForm() {
-    setNewComment({ commenter: "", comment: "" })
-  }
+//   function resetForm() {
+//     setNewComment({ Commenter: "", Comment: "" })
+//   }
 
-  return (
-    <div>
-      <Form></Form>
-    </div>
-  )
-}
+//   function handleSubmit(e) {
+//     e.preventDefault()
+//     resetForm()
+//     addNewComment()
+//   }
 
-export default CommentsForm
+//   return (
+//     <div>
+//       <Form onSubmit={handleSubmit}>
+//         <label htmlFor="commenter">
+//           Commenter
+//           <input
+//             type="text"
+//             name="commenter"
+//             onChange={(e) => setCommenter(e.target.value)}
+//             value={commenter}
+//           />
+//         </label>
+//         <label htmlFor="comment">
+//           comment
+//           <input
+//             type="text"
+//             name="comment"
+//             onChange={(el) => setComments(el.target.value)}
+//             value={comments}
+//           />
+//         </label>
+//         <br></br>
+//         <input type="submit" />
+//       </Form>
+//       <div className="comment_list">
+        
+//         {
+//          comments.map((e)=>{
+
+//           return(
+//             <li>
+//               <p>{e.commenter}</p>
+//               <p>{e.comment}</p>
+//             </li> 
+//           )
+//         }) 
+        
+//         }
+        
+  
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default CommentsForm

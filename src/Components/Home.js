@@ -10,7 +10,8 @@ import Modal from "./Modal"
 function Home() {
   const [searchInput, setSearchInput] = useState("")
   const [datalist, setDatalist] = useState([])
-  
+  const[modal, setModal] = useState(false)
+  const[opened, setOpened] = useState(false)
 
   function handleClickSearch(e) {
     e.preventDefault()
@@ -71,6 +72,10 @@ function Home() {
       <div className="videoBox">
         {datalist.length > 0 ? <VideoList videos={datalist} /> : null}
       </div>
+
+      <div className="modalButton1">
+        <button onClick={()=>setOpened(true)}>Open Modal</button></div>
+      <Modal open={opened} closed={()=>setOpened(false)} >Please enter one or more keywords to search for a video!</Modal> 
     </div>
   )
 }
