@@ -97,12 +97,12 @@ background-color: black;
 
 
 .modalFront{
-  height: 60vh;
-  width: 60vw;
+  height: 30vh;
+  width: 30vw;
   background-color: white;
   color:red;
   position:fixed;
-  top: 50%;
+  top: 30%;
   left: 50%;
   right: 50%;
   transform: translate(-50%, -50%);
@@ -115,13 +115,11 @@ background-color: black;
 }
 
 .modal-overlay {
-  /* height: 50vh;
-  width: 50vw; */
- top:0;
- bottom: 0;
- right: 0;
- left: 0;
- background-color: rgba(0, 0, 0, 0.6);
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
   /* color: cornsilk; */
   position: fixed;
   /* top: "50%";
@@ -135,6 +133,24 @@ background-color: black;
 .modalButton1{
 position: relative;
 z-index: 1;
+margin-left: 40em;
+margin-top: -3px;
+} 
+.modalButton2{
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: red;
+  height: 2em;
+  width: 2em;
+  background-color: white;
+  margin-top: 0;
+  margin-left: 90% ;
+  border-color: white;
+}
+
+.modalText{
+  margin: 0 auto;
+  margin-top: 2em;
 }
 
 .about-grid{

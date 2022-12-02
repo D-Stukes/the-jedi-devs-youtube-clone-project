@@ -4,7 +4,7 @@ function About() {
     return (
         <div>
             <>
-            <Nav />
+            <Nav />gi
             <div className='about-grid'>  
                 <div className='LNgridBox'>
                 <h1 className='LN-name'>Lennie Nurse</h1>

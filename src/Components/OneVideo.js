@@ -76,7 +76,7 @@ function handleClickAddNotLikes(){
 
       <div className="videoInfo">
        <h3 className="videoTitle">{videoTitle}</h3>  
-     {/* <button onClick={handleClickAddLikes}> {videoLikes}</button> */}
+       {/* <button onClick={handleClickAddLikes}> {videoLikes}</button> */}
                <input 
                className="likeButton"
                onClick={handleClickAddLikes}

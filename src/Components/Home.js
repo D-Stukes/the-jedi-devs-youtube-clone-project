@@ -19,8 +19,9 @@ function Home() {
     const BASE_URL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${searchInput}&key=${process.env.REACT_APP_API_KEY}`
 
     if(searchInput === "") {
-      alert("Please enter a keyword to search")
-
+      
+      setOpened(true)
+      
     } else {
     
     fetch(`${BASE_URL}`)
@@ -39,6 +40,7 @@ function Home() {
 }
 
   function handleChangeSearch(e) {
+   e.target.value == "" ? setOpened(true) :
     setSearchInput(e.target.value)
   }
 
@@ -73,9 +75,10 @@ function Home() {
         {datalist.length > 0 ? <VideoList videos={datalist} /> : null}
       </div>
 
-      <div className="modalButton1">
-        <button onClick={()=>setOpened(true)}>Open Modal</button></div>
-      <Modal open={opened} closed={()=>setOpened(false)} >Please enter one or more keywords to search for a video!</Modal> 
+      {/* <div className="modalButton1">
+        <button onClick={()=>setOpened(true)}>Open Modal</button></div> */}
+      <Modal open={opened} closed={()=>setOpened(false)} > <br/>
+      <p className="modalText">Please enter one or more keywords to search for a video!</p></Modal> 
     </div>
   )
 }
@@ -88,3 +91,8 @@ export default Home
 //      let videoPath = `https://www.youtube.com/watch?v=${video.id.videoId}`
 //      <img src =`>
 //     }
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };
